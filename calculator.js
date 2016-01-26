@@ -65,7 +65,7 @@ function equal(){
   $(".bottom-row").html(res);
 }
 
-$(function() {
+$(document).ready(function() {
   update();
   window.addEventListener('resize', update);
   
