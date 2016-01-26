@@ -6,7 +6,6 @@ body {
 .bg {
  background: url('img/forrestsmall.jpeg');
   background-size: cover;
-  /* background-repeat: no-repeat; */
   height: 100%;
   position: fixed;
   display: block;
