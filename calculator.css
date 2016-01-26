@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Play);
+body {
+  text-align: center;
+  font-family: 'Play';
+}
+.bg {
+ background: url('http://imgur.com/tmgwpc0.jpg');
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  height: 100%;
+  position: fixed;
+  display: block;
+  left: 0;
+  right: 0;
+}
+.blur {
+  background: url('http://imgur.com/tmgwpc0.jpg');
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 300px;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  
+}
+.calc {
+  height: 500px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(26, 41, 36,0.3);
+  border-radius: 20px;
+}
+div {
+  display: inline-block;
+  padding: 2px 0;
+}
+.row {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.result {
+  box-shadow: 1px 1px rgba(255,255,255,1);
+  width: 95%;
+  height: 65px;
+  text-align: right;
+  margin-top: 12%;
+  color: white;
+  border-radius: 10px;
+  background-color: rgba(26, 41, 36,0.7);
+}
+button {
+  margin: 0;
+  padding: 0;
+  font-family: 'Play';
+  font-size: 2em;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.top-row {
+  font-family: 'Play';
+  font-size: 2em;
+  height: 25px;
+  width: 100%;
+}
+.bottom-row {
+  font-family: 'Play';
+  font-size: 2em;
+  height: 25px;
+  width: 100%;
+}
+.clean {
+  width: 100%;
+  text-align: right;
+}
+.cl {
+  margin-right: 5px;
+  margin-top: 10px;
+  background-color: rgba(237, 26, 26, 0.4);
+  border-radius: 5px;
+}
