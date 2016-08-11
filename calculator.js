@@ -14,9 +14,11 @@ function result(n1, n2, op) {
   return round_number(calc[op](num1, num2), 12);
 }
 var op = null; var n1 = []; var n2 = []; var solved = false;
+
 function clear() {
   n1 = []; n2 = []; op = null; solved = false;
 }
+
 function update() {
   ir = 1366/914;
   w = window.innerWidth;
@@ -40,8 +42,10 @@ function number(no){
     $(".bottom-row").html("0");
   }
   if (!op) {
+    if (no === '.' && n1.indexOf('.') !== -1) return; 
     n1.push(no);
   } else {
+    if (no === '.' && n2.indexOf('.') !== -1) return; 
     n2.push(no);
   }
   $(".top-row").append(no);
@@ -62,13 +66,24 @@ function operator(operator){
       n1.push(res);
     }      
   }
-  op = operator;
-  $(".top-row").append(op);
+  if (n1.length === 0){
+    n1.push(operator);
+  } else {
+    op = operator;
+  }
+  $(".top-row").append(operator);
 }
 function equal(){
+  if (n2.length === 0) return;
   solved = true;
   res = result(n1, n2, op);
   $(".bottom-row").html(res);
+}
+
+function reset(){
+  clear();
+  $(".top-row").html("");
+  $(".bottom-row").html("0");
 }
 
 $(document).ready(function() {
@@ -89,14 +104,11 @@ $(document).ready(function() {
   });
 
   $(".cl").click(function() {
-    clear();
-    $(".top-row").html("");
-    $(".bottom-row").html("0");
+    reset();
   });
 
-  $("body").keypress(function(e){
-    //$(".top-row").html(e.key);
-    char = String.fromCharCode(e.which);
+  $("body").keydown(function(e){
+    char = e.key;
     switch (char){
       case '1':
       case '2':
@@ -117,8 +129,11 @@ $(document).ready(function() {
       case '*':
         operator(char);
         break;
-      case '\r':
+      case 'Enter':
         equal();
+        break;
+      case 'Delete':
+        reset();
     }
     });
 });

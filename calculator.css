@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Play);
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
 body {
   text-align: center;
-  font-family: 'Play';
+  font-family: 'Open Sans';
 }
 .bg {
  background: url('img/forrestsmall.jpeg');
@@ -44,9 +45,8 @@ div {
   padding: 0;
 }
 .result {
-  box-shadow: 1px 1px rgba(255,255,255,1);
   width: 95%;
-  height: 65px;
+  height: 84px;
   text-align: right;
   margin-top: 12%;
   color: white;
@@ -56,7 +56,7 @@ div {
 button {
   margin: 0;
   padding: 0;
-  font-family: 'Play';
+  font-family: 'Open Sans';
   font-size: 2em;
   width: 70px;
   height: 70px;
@@ -64,17 +64,31 @@ button {
   color: white;
   border: none;
 }
+button:focus{
+  outline: none;
+}
 .top-row {
-  font-family: 'Play';
+  font-family: 'Open Sans';
   font-size: 2em;
-  height: 25px;
+  height: 40px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  float: right;
+}
+.row-wrap{
+  overflow:hidden;
+  white-space: nowrap;
   width: 100%;
+  margin: 0 auto;
+  text-align: right;
 }
 .bottom-row {
-  font-family: 'Play';
+  font-family: 'Open Sans';
   font-size: 2em;
-  height: 25px;
+  height: 40px;
   width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 .clean {
   width: 100%;
