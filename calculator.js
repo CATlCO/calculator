@@ -91,19 +91,23 @@ $(document).ready(function() {
   window.addEventListener('resize', update);
   
   clear();
-  $(".num").click(function() {
+  $(".num").click(function(ev) {
+    $(this).blur();
     number($(this).html());
   });
 
-  $(".op").click(function() {
+  $(".op").click(function(ev) {
+    $(this).blur();
     operator($(this).html());
   });
   
-  $(".eql").click(function() {
+  $(".eql").click(function(ev) {
+    $(this).blur();
     equal();
   });
 
-  $(".cl").click(function() {
+  $(".cl").click(function(ev) {
+    $(this).blur();
     reset();
   });
 
@@ -134,6 +138,7 @@ $(document).ready(function() {
         break;
       case 'Delete':
         reset();
+        break;
     }
     });
 });
